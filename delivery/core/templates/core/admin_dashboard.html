@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador - Meu Delivery</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; color: #333; }
+        header { display: flex; justify-content: space-between; align-items: center; background: #1e3799; color: white; padding: 15px 30px; border-radius: 8px; margin-bottom: 30px; }
+        h1 { margin: 0; font-size: 22px; }
+        .btn-logout { background-color: #ff4757; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+        .btn-logout:hover { background-color: #e03e4d; }
+        .dashboard-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.05); }
+        .actions-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .btn-add { background-color: #0984e3; color: white; padding: 10px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+        .btn-add:hover { background-color: #74b9ff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; color: #333; }
+        .badge { background-color: #eccc68; color: #333; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛠️ Painel de Gestão - Restaurante</h1>
+        <a href="/" class="btn-logout">Sair / Ver Site</a>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="actions-bar">
+            <h2>Gerenciamento de Produtos</h2>
+            <a href="#" class="btn-add" onclick="alert('Aqui abrirá a tela de cadastro de produto em breve!')">+ Cadastrar Novo Produto</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>X-Burger Artesanal</strong></td>
+                    <td>Pão brioche, carne 160g, queijo cheddar...</td>
+                    <td>R$ 29,90</td>
+                    <td><span class="badge">Ativo</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Pizza Margherita</strong></td>
+                    <td>Massa artesanal, molho de tomate, mozarela...</td>
+                    <td>R$ 49,90</td>
+                    <td><span class="badge">Ativo</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

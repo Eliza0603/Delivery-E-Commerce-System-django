@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ produto.nome }} - Meu Delivery</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; }
+        
+        header { display: flex; justify-content: space-between; align-items: center; background: #1e3799; color: white; padding: 18px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); width: 100%; }
+        header h1 { font-size: 22px; font-weight: 600; }
+        .btn-voltar { background-color: #0984e3; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+        .btn-voltar:hover { background-color: #74b9ff; }
+
+        .main-container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        
+        .detail-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #eaeaea; }
+        
+        .detail-img-box { width: 100%; height: 380px; background: #eee; }
+        .detail-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .detail-body { padding: 35px; }
+        .detail-body h2 { font-size: 28px; color: #1e3799; margin-bottom: 12px; }
+        .detail-body p { font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 25px; }
+        .detail-price { font-size: 26px; font-weight: 700; color: #16a34a; margin-bottom: 30px; }
+
+        .detail-footer { display: flex; align-items: center; gap: 20px; border-top: 1px solid #f1f2f6; padding-top: 25px; }
+        .quantity-control { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fdfdfd; }
+        .quantity-control button { background: #f8f9fa; border: none; padding: 12px 18px; font-size: 18px; cursor: pointer; font-weight: bold; color: #333; }
+        .quantity-control button:hover { background: #e9ecef; }
+        .quantity-control span { padding: 0 18px; font-weight: 600; font-size: 16px; }
+        
+        .btn-add-cart { flex: 1; background-color: #ea1d2c; color: white; border: none; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; text-align: center; transition: background 0.2s; }
+        .btn-add-cart:hover { background-color: #c91421; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍔 Meu Delivery</h1>
+        <a href="/" class="btn-voltar">← Voltar ao Cardápio</a>
+    </header>
+
+    <div class="main-container">
+        {% if produto %}
+        <div class="detail-card">
+            <div class="detail-img-box">
+                <img src="{{ produto.imagem }}" alt="{{ produto.nome }}">
+            </div>
+            <div class="detail-body">
+                <h2>{{ produto.nome }}</h2>
+                <p>{{ produto.descricao }}</p>
+                <div class="detail-price">R$ {{ produto.preco }}</div>
+                
+                <div class="detail-footer">
+                    <div class="quantity-control">
+                        <button onclick="changeQty(-1)">-</button>
+                        <span id="qtyValue">1</span>
+                        <button onclick="changeQty(1)">+</button>
+                    </div>
+                    <button class="btn-add-cart" onclick="addToCart()">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <h2>Produto não encontrado!</h2>
+        <p><a href="/">Clique aqui para voltar ao cardápio.</a></p>
+        {% endif %}
+    </div>
+
+    <script>
+        let currentQty = 1;
+
+        function changeQty(amount) {
+            currentQty += amount;
+            if (currentQty < 1) currentQty = 1;
+            document.getElementById('qtyValue').innerText = currentQty;
+        }
+
+        function addToCart() {
+            alert('Produto adicionado ao carrinho com sucesso!');
+            window.location.href = "{% url 'home' %}";
+        }
+    </script>
+</body>
+</html>
