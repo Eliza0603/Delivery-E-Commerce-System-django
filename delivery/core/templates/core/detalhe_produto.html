@@ -8,42 +8,72 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; }
         
-        /* Cabeçalho atualizado APENAS nas cores (Fundo cinza claro, texto escuro) */
         header { display: flex; justify-content: space-between; align-items: center; background: #eeeeef; color: #111; padding: 18px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); width: 100%; }
         header h1 { font-size: 22px; font-weight: 700; color: #111; }
         
-        /* Botão mantido original */
         .btn-voltar { background-color: #0984e3; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
         .btn-voltar:hover { background-color: #74b9ff; }
 
-        .main-container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .main-container { max-width: 550px; margin: 40px auto; padding: 0 20px; }
+        .detail-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #eaeaea; }
         
-        .detail-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #eaeaea; }
-        
-        .detail-img-box { width: 100%; height: 380px; background: #eee; }
+        .detail-img-box { width: 100%; height: 260px; background: #eee; }
         .detail-img-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .detail-body { padding: 35px; }
-        .detail-body h2 { font-size: 28px; color: #1e3799; margin-bottom: 12px; }
-        .detail-body p { font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 25px; }
-        .detail-price { font-size: 26px; font-weight: 700; color: #16a34a; margin-bottom: 30px; }
-
-        .detail-footer { display: flex; align-items: center; gap: 20px; border-top: 1px solid #f1f2f6; padding-top: 25px; }
-        .quantity-control { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fdfdfd; }
-        .quantity-control button { background: #f8f9fa; border: none; padding: 12px 18px; font-size: 18px; cursor: pointer; font-weight: bold; color: #333; }
-        .quantity-control button:hover { background: #e9ecef; }
-        .quantity-control span { padding: 0 18px; font-weight: 600; font-size: 16px; }
+        .detail-body { padding: 25px; }
+        .detail-body h2 { font-size: 22px; color: #333; margin-bottom: 8px; }
         
-        .btn-add-cart { flex: 1; background-color: #ea1d2c; color: white; border: none; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; text-align: center; transition: background 0.2s; }
-        .btn-add-cart:hover { background-color: #c91421; }
+        .product-meta { display: flex; gap: 10px; margin-bottom: 12px; }
+        .product-meta span { background-color: #f1f2f6; color: #555; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .detail-body p { font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 20px; }
+        
+        /* --------------------------------------------------- */
+        /* NOVA SECÇÃO: COMPLEMENTOS / ADICIONAIS (MOLHOS)     */
+        /* --------------------------------------------------- */
+        .addon-section { background: #f8f9fa; border: 1px solid #eaeaea; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+        
+        .addon-header { background: #f1f2f6; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; }
+        .addon-title-box h3 { font-size: 15px; color: #333; margin-bottom: 4px; }
+        .addon-title-box p { font-size: 13px; color: #777; margin: 0; }
+        
+        .addon-badges { display: flex; align-items: center; gap: 8px; }
+        .badge-count { background: #444; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .badge-required { background: #444; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+
+        .addon-list { padding: 0 15px; }
+        .addon-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eaeaea; }
+        .addon-item:last-child { border-bottom: none; }
+        
+        .addon-info h4 { font-size: 14px; font-weight: 500; color: #444; margin-bottom: 4px; }
+        .addon-price { font-size: 14px; color: #666; }
+        
+        .addon-qty-control { display: flex; align-items: center; gap: 12px; }
+        .addon-qty-control button { background: none; border: none; font-size: 20px; cursor: pointer; color: #555; padding: 0 5px; }
+        .addon-qty-control span { font-weight: 600; font-size: 14px; min-width: 15px; text-align: center; }
+
+        /* Área de Observações */
+        .obs-section { margin-top: 25px; margin-bottom: 25px; }
+        .obs-header { display: flex; justify-content: space-between; font-size: 13px; color: #555; margin-bottom: 8px; font-weight: 600; }
+        .obs-textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; font-size: 14px; resize: vertical; min-height: 80px; outline: none; transition: border-color 0.2s; }
+        .obs-textarea:focus { border-color: #333; }
+
+        /* Rodapé de Compra */
+        .detail-footer { display: flex; align-items: center; gap: 15px; border-top: 1px solid #f1f2f6; padding-top: 20px; }
+        
+        .quantity-control { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fff; height: 48px; }
+        .quantity-control button { background: white; border: none; padding: 0 16px; height: 100%; font-size: 20px; cursor: pointer; color: #ea1d2c; font-weight: bold; }
+        .quantity-control span { font-weight: 600; font-size: 16px; min-width: 30px; text-align: center; }
+        
+        .btn-add-cart { flex: 1; display: flex; justify-content: space-between; align-items: center; background-color: #111; color: white; border: none; padding: 0 20px; height: 48px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .btn-add-cart:hover { background-color: #333; }
+        .btn-add-cart.disabled { opacity: 0.6; cursor: not-allowed; }
     </style>
 </head>
 <body>
 
-    <!-- Estrutura HTML original mantida -->
     <header>
         <h1>🍔 Meu Delivery</h1>
-        <a href="/" class="btn-voltar">Voltar ao Cardápio</a>
+        <a href="/" class="btn-voltar">← Voltar</a>
     </header>
 
     <div class="main-container">
@@ -54,37 +84,187 @@
             </div>
             <div class="detail-body">
                 <h2>{{ produto.nome }}</h2>
+                <div class="product-meta">
+                    <span>Serve 2 pessoas</span>
+                    <span>400g</span>
+                </div>
                 <p>{{ produto.descricao }}</p>
-                <div class="detail-price">R$ {{ produto.preco }}</div>
                 
+                <!-- SECÇÃO DE MOLHOS -->
+                <div class="addon-section">
+                    <div class="addon-header">
+                        <div class="addon-title-box">
+                            <h3>Escolha seu Molho</h3>
+                            <p>Escolha pelo menos 1 opção</p>
+                        </div>
+                        <div class="addon-badges">
+                            <span class="badge-count" id="addonCounter">0 / 20</span>
+                            <span class="badge-required">OBRIGATÓRIO</span>
+                        </div>
+                    </div>
+                    
+                    <div class="addon-list">
+                        <!-- Item 1 -->
+                        <div class="addon-item">
+                            <div class="addon-info">
+                                <h4>Não quero Molhos - Atenção NENHUM molho será enviado</h4>
+                                <span class="addon-price">Grátis</span>
+                            </div>
+                            <div class="addon-qty-control">
+                                <button onclick="changeAddon('nenhum', -1, 0)">−</button>
+                                <span id="qty_nenhum">0</span>
+                                <button onclick="changeAddon('nenhum', 1, 0)">+</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="addon-item">
+                            <div class="addon-info">
+                                <h4>Sache ketchup - 1 unidade</h4>
+                                <span class="addon-price">+ R$ 1,50</span>
+                            </div>
+                            <div class="addon-qty-control">
+                                <button onclick="changeAddon('tare', -1, 1.50)">−</button>
+                                <span id="qty_tare">0</span>
+                                <button onclick="changeAddon('tare', 1, 1.50)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="addon-item">
+                            <div class="addon-info">
+                                <h4>Sache mostrada  - 1 unidade</h4>
+                                <span class="addon-price">+ R$ 1,50</span>
+                            </div>
+                            <div class="addon-qty-control">
+                                <button onclick="changeAddon('shoyo', -1, 1.50)">−</button>
+                                <span id="qty_shoyo">0</span>
+                                <button onclick="changeAddon('shoyo', 1, 1.50)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área de Observações -->
+                <div class="obs-section">
+                    <div class="obs-header">
+                        <span>Alguma observação?</span>
+                        <span id="charCount">0/500</span>
+                    </div>
+                    <textarea class="obs-textarea" id="obsInput" maxlength="500"></textarea>
+                </div>
+
+                <!-- Rodapé -->
                 <div class="detail-footer">
                     <div class="quantity-control">
-                        <button onclick="changeQty(-1)">-</button>
-                        <span id="qtyValue">1</span>
-                        <button onclick="changeQty(1)">+</button>
+                        <button onclick="changeProductQty(-1)">−</button>
+                        <span id="productQtyValue">1</span>
+                        <button onclick="changeProductQty(1)">+</button>
                     </div>
-                    <button class="btn-add-cart" onclick="addToCart()">Adicionar ao Carrinho</button>
+                    
+                    <button class="btn-add-cart disabled" id="btnAddToCart" onclick="addToCart()">
+                        <span>Adicionar</span>
+                        <span id="totalPriceBtn">R$ {{ produto.preco }}</span>
+                    </button>
                 </div>
             </div>
         </div>
-        {% else %}
-        <h2>Produto não encontrado!</h2>
-        <p><a href="/">Clique aqui para voltar ao cardápio.</a></p>
         {% endif %}
     </div>
 
     <script>
-        let currentQty = 1;
+        // Variáveis Principais
+        let basePrice = parseFloat("{{ produto.preco }}".replace(',', '.')) || 11.00; // Coloquei 11.00 como fallback
+        let currentProductQty = 1;
+        
+        // Controle dos Adicionais
+        const MAX_ADDONS = 20;
+        let totalAddonsSelected = 0;
+        let addonsData = {
+            'nenhum': { qty: 0, price: 0 },
+            'tare': { qty: 0, price: 1.50 },
+            'shoyo': { qty: 0, price: 1.50 }
+        };
 
-        function changeQty(amount) {
-            currentQty += amount;
-            if (currentQty < 1) currentQty = 1;
-            document.getElementById('qtyValue').innerText = currentQty;
+        // Formata o preço
+        function formatPrice(value) {
+            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        // 1. Altera a quantidade do PRODUTO PRINCIPAL
+        function changeProductQty(amount) {
+            currentProductQty += amount;
+            if (currentProductQty < 1) currentProductQty = 1;
+            
+            document.getElementById('productQtyValue').innerText = currentProductQty;
+            calculateTotal();
+        }
+
+        // 2. Altera a quantidade dos ADICIONAIS
+        function changeAddon(id, amount, price) {
+            let currentAddonQty = addonsData[id].qty;
+            
+            // Verifica limites
+            if (amount > 0 && totalAddonsSelected >= MAX_ADDONS) return; // Chegou ao limite de 20
+            if (amount < 0 && currentAddonQty <= 0) return; // Não pode ser negativo
+
+            // Atualiza os valores
+            addonsData[id].qty += amount;
+            totalAddonsSelected += amount;
+
+            // Atualiza a interface
+            document.getElementById('qty_' + id).innerText = addonsData[id].qty;
+            document.getElementById('addonCounter').innerText = totalAddonsSelected + " / " + MAX_ADDONS;
+            
+            calculateTotal();
+            validateRequired();
+        }
+
+        // 3. Calcula o Preço Total (Produto + Adicionais) * Quantidade
+        function calculateTotal() {
+            let addonsTotalPrice = 0;
+            
+            // Soma o valor de todos os adicionais escolhidos
+            for (let key in addonsData) {
+                addonsTotalPrice += addonsData[key].qty * addonsData[key].price;
+            }
+
+            // A lógica de negócio comum é: (Preço Base + Custo dos Adicionais) * Quantidade do Produto
+            let finalTotal = (basePrice + addonsTotalPrice) * currentProductQty;
+            
+            document.getElementById('totalPriceBtn').innerText = formatPrice(finalTotal);
+        }
+
+        // 4. Valida se o cliente escolheu pelo menos 1 opção (OBRIGATÓRIO)
+        function validateRequired() {
+            const btn = document.getElementById('btnAddToCart');
+            if (totalAddonsSelected >= 1) {
+                btn.classList.remove('disabled');
+            } else {
+                btn.classList.add('disabled');
+            }
         }
 
         function addToCart() {
-            alert('Produto adicionado ao carrinho com sucesso!');
-            window.location.href = "{% url 'home' %}";
+            if (totalAddonsSelected < 1) {
+                alert("Por favor, escolha pelo menos 1 opção de molho!");
+                return;
+            }
+            alert('Adicionado com sucesso!');
+        }
+        
+        // Inicialização ao carregar a página
+        window.onload = function() {
+            calculateTotal();
+            validateRequired();
+        };
+
+        // Contador de caracteres da observação
+        const obsInput = document.getElementById('obsInput');
+        if(obsInput) {
+            obsInput.addEventListener('input', function() {
+                document.getElementById('charCount').innerText = this.value.length + "/500";
+            });
         }
     </script>
 </body>
