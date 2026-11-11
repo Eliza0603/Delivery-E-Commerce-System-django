@@ -8,8 +8,11 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; }
         
-        header { display: flex; justify-content: space-between; align-items: center; background: #1e3799; color: white; padding: 18px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); width: 100%; }
-        header h1 { font-size: 22px; font-weight: 600; }
+        /* Cabeçalho atualizado APENAS nas cores (Fundo cinza claro, texto escuro) */
+        header { display: flex; justify-content: space-between; align-items: center; background: #eeeeef; color: #111; padding: 18px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); width: 100%; }
+        header h1 { font-size: 22px; font-weight: 700; color: #111; }
+        
+        /* Botão mantido original */
         .btn-voltar { background-color: #0984e3; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
         .btn-voltar:hover { background-color: #74b9ff; }
 
@@ -37,9 +40,10 @@
 </head>
 <body>
 
+    <!-- Estrutura HTML original mantida -->
     <header>
         <h1>🍔 Meu Delivery</h1>
-        <a href="/" class="btn-voltar">← Voltar ao Cardápio</a>
+        <a href="/" class="btn-voltar">Voltar ao Cardápio</a>
     </header>
 
     <div class="main-container">
