@@ -1,42 +1,100 @@
-header { 
-    display: flex; justify-content: space-between; align-items: center; 
-    background: #f8f9fa; padding: 15px 40px; 
-    position: sticky; top: 0; z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+/* Reseta margens para colar perfeitamente nas bordas da tela */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
 }
-.header-logo { font-size: 20px; font-weight: 700; color: #111; text-decoration: none; display: flex; align-items: center; gap: 8px;}
 
-/* Barra de pesquisa ajustada para fundo branco e texto escuro */
+/* Cabeçalho fixo, ocupando 100% da largura, sem espaços vazios */
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: #ffffff; 
+    padding: 15px 30px; 
+    width: 100%;
+    box-sizing: border-box; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Logo do delivery */
+.header-logo { 
+    font-size: 22px; 
+    font-weight: 700; 
+    color: #111; 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* Container da busca para garantir que ela ocupe bem o centro */
+.busca {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+/* Barra de pesquisa profissional, legível e bem dimensionada */
 .search-bar {
-    flex: 1; max-width: 400px; padding: 10px 15px; margin: 0 20px;
-    border: 1px solid #ccc; /* Adicionado uma borda leve */
+    width: 100%;
+    max-width: 450px; 
+    padding: 10px 16px; 
+    border: 1px solid #ccc; 
     border-radius: 8px; 
-    background: #ffffff; /* Fundo branco */
-    color: #333; /* Texto escuro */
-    outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    background: #ffffff; 
+    color: #333; 
+    font-size: 15px;
+    outline: none; 
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
+
 .search-bar::placeholder {
-    color: #888; /* Cor do texto "Buscar no cardápio" */
+    color: #888; 
 }
+
 .search-bar:focus { 
     border-color: #0984e3; 
-    box-shadow: 0 0 0 2px rgba(9, 132, 227, 0.2); /* Efeito de foco azul */
+    box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.15); 
 }
 
-.header-nav { display: flex; gap: 20px; align-items: center; }
+/* Links de navegação */
+.header-nav { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+    white-space: nowrap;
+}
 
-/* Links "Início" e "Pedidos" ajustados para escuro */
 .header-nav a { 
     text-decoration: none; 
-    color: #444; /* Cor escura para contrastar com o fundo cinza */
-    font-weight: 500; font-size: 14px; transition: color 0.2s; 
+    color: #444; 
+    font-weight: 600; 
+    font-size: 15px; 
+    transition: color 0.2s; 
 }
-.header-nav a:hover { color: #0984e3; } /* Fica azul ao passar o mouse */
 
-/* Botão do cabeçalho */
-.btn-login { 
-    background-color: #0984e3; color: white !important; 
-    padding: 8px 18px; border-radius: 6px; 
-    font-weight: 600 !important; transition: background 0.2s; 
+.header-nav a:hover { 
+    color: #0984e3; 
 }
-.btn-login:hover { background-color: #74b9ff; }
+
+/* Botão de login */
+.btn-login { 
+    background-color: #0984e3; 
+    color: white !important; 
+    padding: 9px 20px; 
+    border-radius: 6px; 
+    font-weight: 600 !important; 
+    font-size: 15px;
+    transition: background 0.2s; 
+}
+
+.btn-login:hover { 
+    background-color: #74b9ff; 
+}
