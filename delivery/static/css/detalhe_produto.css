@@ -1,0 +1,62 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; }
+
+header { display: flex; justify-content: space-between; align-items: center; background: #eeeeef; color: #111; padding: 18px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); width: 100%; }
+header h1 { font-size: 22px; font-weight: 700; color: #111; }
+
+.btn-voltar { background-color: #0984e3; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+.btn-voltar:hover { background-color: #74b9ff; }
+
+.main-container { max-width: 550px; margin: 40px auto; padding: 0 20px; }
+.detail-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #eaeaea; }
+
+.detail-img-box { width: 100%; height: 260px; background: #eee; }
+.detail-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.detail-body { padding: 25px; }
+.detail-body h2 { font-size: 22px; color: #333; margin-bottom: 8px; }
+
+.product-meta { display: flex; gap: 10px; margin-bottom: 12px; }
+.product-meta span { background-color: #f1f2f6; color: #555; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+.detail-body p { font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 20px; }
+
+/* --------------------------------------------------- */
+/* NOVA SECÇÃO: COMPLEMENTOS / ADICIONAIS (MOLHOS)     */
+/* --------------------------------------------------- */
+.addon-section { background: #f8f9fa; border: 1px solid #eaeaea; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+
+.addon-header { background: #f1f2f6; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; }
+.addon-title-box h3 { font-size: 15px; color: #333; margin-bottom: 4px; }
+.addon-title-box p { font-size: 13px; color: #777; margin: 0; }
+
+.addon-badges { display: flex; align-items: center; gap: 8px; }
+.badge-count { background: #444; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+.badge-required { background: #444; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+
+.addon-list { padding: 0 15px; }
+.addon-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eaeaea; }
+.addon-item:last-child { border-bottom: none; }
+
+.addon-info h4 { font-size: 14px; font-weight: 500; color: #444; margin-bottom: 4px; }
+.addon-price { font-size: 14px; color: #666; }
+
+.addon-qty-control { display: flex; align-items: center; gap: 12px; }
+.addon-qty-control button { background: none; border: none; font-size: 20px; cursor: pointer; color: #555; padding: 0 5px; }
+.addon-qty-control span { font-weight: 600; font-size: 14px; min-width: 15px; text-align: center; }
+
+/* Área de Observações */
+.obs-section { margin-top: 25px; margin-bottom: 25px; }
+.obs-header { display: flex; justify-content: space-between; font-size: 13px; color: #555; margin-bottom: 8px; font-weight: 600; }
+.obs-textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; font-size: 14px; resize: vertical; min-height: 80px; outline: none; transition: border-color 0.2s; }
+.obs-textarea:focus { border-color: #333; }
+
+/* Rodapé de Compra */
+.detail-footer { display: flex; align-items: center; gap: 15px; border-top: 1px solid #f1f2f6; padding-top: 20px; }
+
+.quantity-control { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fff; height: 48px; }
+.quantity-control button { background: white; border: none; padding: 0 16px; height: 100%; font-size: 20px; cursor: pointer; color: #ea1d2c; font-weight: bold; }
+.quantity-control span { font-weight: 600; font-size: 16px; min-width: 30px; text-align: center; }
+
+.btn-add-cart { flex: 1; display: flex; justify-content: space-between; align-items: center; background-color: #111; color: white; border: none; padding: 0 20px; height: 48px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+.btn-add-cart:hover { background-color: #333; }
+.btn-add-cart.disabled { opacity: 0.6; cursor: not-allowed; }

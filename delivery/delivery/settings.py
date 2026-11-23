@@ -118,6 +118,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
+import os
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
