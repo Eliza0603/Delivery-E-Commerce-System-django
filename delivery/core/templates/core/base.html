@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Delivery{% endblock %}</title>
+    
+    <!-- CSS global/cabeçalho que vai repetir em todas as telas -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    
+    <!-- Bloco para cada tela adicionar seu próprio CSS extra se precisar -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- CABEÇALHO FIXO QUE APARECE EM TODAS AS TELAS -->
+    <header>
+        <!-- Adicionada a classe header-logo para puxar o seu CSS -->
+        <a href="{% url 'home' %}" class="header-logo">🍔 <strong>Meu Delivery</strong></a>
+        
+        <!-- Adicionada a classe search-bar direto no input -->
+        <div class="busca">
+            <input type="text" class="search-bar" placeholder="Buscar no cardápio">
+        </div>
+        
+        <!-- Adicionada a classe header-nav e btn-login -->
+        <nav class="header-nav">
+            <a href="{% url 'home' %}">Início</a>
+            <a href="{% url 'acompanhar_pedido' %}">Pedidos</a>
+            <a href="{% url 'login' %}" class="btn-login">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- O CONTEÚDO DE CADA TELA MUDA AQUI -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

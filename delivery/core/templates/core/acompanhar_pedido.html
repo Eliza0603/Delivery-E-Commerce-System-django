@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container-pedidos" style="padding: 40px; text-align: center;">
+
+    <!-- CENÁRIO 1: Usuário NÃO está logado -->
+    {% if status_pedido == 'nao_logado' %}
+        <div class="card-aviso">
+            <h2>🔒 Ops! Você precisa entrar na sua conta</h2>
+            <p>Para conseguir acompanhar seus pedidos e ver o status da entrega, faça login no sistema.</p>
+            <a href="{% url 'login' %}" class="btn-login" style="display: inline-block; text-decoration: none; margin-top: 15px;">Fazer Login</a>
+        </div>
+
+    <!-- CENÁRIO 2: Usuário está logado, mas NÃO tem pedidos -->
+    {% elif status_pedido == 'sem_pedidos' %}
+        <div class="card-aviso">
+            <h2>🛒 Você ainda não tem nenhum pedido</h2>
+            <p>Que tal dar uma olhada no nosso cardápio e fazer o seu primeiro pedido agora mesmo?</p>
+            <a href="{% url 'home' %}" class="btn-submit" style="display: inline-block; margin-top: 15px; padding: 10px 20px; text-decoration: none;">Ver Cardápio</a>
+        </div>
+
+    <!-- CENÁRIO 3: Usuário está logado e TEM pedido -->
+    {% elif status_pedido == 'com_pedido' %}
+        <div class="card-aviso">
+            <h2>📦 Acompanhe seu pedido</h2>
+            <p>Seu pedido recente está em andamento!</p>
+            <!-- Aqui você exibe os dados do pedido e o botão direcionando para os detalhes -->
+            <div style="margin: 20px 0; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                <p><strong>Pedido ID:</strong> #{{ pedido.id }}</p>
+                <p><strong>Status:</strong> {{ pedido.status }}</p>
+            </div>
+            <a href="{% url 'acompanhar_pedido' %}" class="btn-submit" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Ver Detalhes do Pedido</a>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

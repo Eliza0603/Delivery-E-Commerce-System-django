@@ -1,0 +1,42 @@
+header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    background: #f8f9fa; padding: 15px 40px; 
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo { font-size: 20px; font-weight: 700; color: #111; text-decoration: none; display: flex; align-items: center; gap: 8px;}
+
+/* Barra de pesquisa ajustada para fundo branco e texto escuro */
+.search-bar {
+    flex: 1; max-width: 400px; padding: 10px 15px; margin: 0 20px;
+    border: 1px solid #ccc; /* Adicionado uma borda leve */
+    border-radius: 8px; 
+    background: #ffffff; /* Fundo branco */
+    color: #333; /* Texto escuro */
+    outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-bar::placeholder {
+    color: #888; /* Cor do texto "Buscar no cardápio" */
+}
+.search-bar:focus { 
+    border-color: #0984e3; 
+    box-shadow: 0 0 0 2px rgba(9, 132, 227, 0.2); /* Efeito de foco azul */
+}
+
+.header-nav { display: flex; gap: 20px; align-items: center; }
+
+/* Links "Início" e "Pedidos" ajustados para escuro */
+.header-nav a { 
+    text-decoration: none; 
+    color: #444; /* Cor escura para contrastar com o fundo cinza */
+    font-weight: 500; font-size: 14px; transition: color 0.2s; 
+}
+.header-nav a:hover { color: #0984e3; } /* Fica azul ao passar o mouse */
+
+/* Botão do cabeçalho */
+.btn-login { 
+    background-color: #0984e3; color: white !important; 
+    padding: 8px 18px; border-radius: 6px; 
+    font-weight: 600 !important; transition: background 0.2s; 
+}
+.btn-login:hover { background-color: #74b9ff; }
